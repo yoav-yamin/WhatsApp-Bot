@@ -43,4 +43,4 @@ When the browser opens, scan the WhatsApp Web QR code with your phone to log in.
 The bot will start the conversation by sending predefined initial messages and will respond to incoming messages based on predefined rules and the DialoGPT model.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License.
