@@ -7,7 +7,6 @@ The WhatsApp Bot with DialoGPT Model is an automated chat bot designed to intera
 This project is ideal for understanding web automation, natural language processing, and the integration of AI models in real-world applications.
 
 ## Table of Contents
-- [Description](#project-description)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
@@ -24,24 +23,24 @@ This project is ideal for understanding web automation, natural language process
    ```bash
    git clone https://github.com/your-username/whatsapp-bot-dialoGPT.git
    cd whatsapp-bot-dialoGPT
-2. **Create and activate a virtual environment:
+2. **Create and activate a virtual environment:**
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-3. **Install required packages:
+3. **Install required packages:**
    ```bash
    pip install selenium transformers torch
-#Additional Configuration
+# Additional Configuration
 - Update the PHONE_NUMBER variable in the script with the recipient's phone number. Ensure the phone number is in the international format (e.g., for Israel, use 972123456789).
-##Usage
-1. **Run the bot:
+## Usage
+1. **Run the bot:**
    ```bash
    python whatsapp_bot.py
-2. **Scan the QR code:
+2. **Scan the QR code:**
 When the browser opens, scan the WhatsApp Web QR code with your phone to log in.
 
-3. **Interact with the bot:
+3. **Interact with the bot:**
 The bot will start the conversation by sending predefined initial messages and will respond to incoming messages based on predefined rules and the DialoGPT model.
 
-##License
+## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
