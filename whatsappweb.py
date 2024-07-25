@@ -13,6 +13,7 @@ MODEL_NAME = "microsoft/DialoGPT-large"
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 model = AutoModelForCausalLM.from_pretrained(MODEL_NAME)
 
+# Function to generate a response using the DialoGPT model
 def auto_respond(user_input):
     user_input_ids = tokenizer.encode(user_input + tokenizer.eos_token, return_tensors='pt')
     generated_ids = model.generate(user_input_ids,
@@ -36,10 +37,11 @@ browser.maximize_window()
 
 # Define phone number and initial messages
 PHONE_NUMBER = "972123456789"  # Modify this phone number as needed
-INITIAL_MESSAGE_1 = "Hi There. This is the bot Yoav is creating"
+INITIAL_MESSAGE_1 = "Hi There. This is the bot I'm creating"
 INITIAL_MESSAGE_2 = "Hello, I am a WhatsApp bot"
 
 
+# Function to open a chat with a specific phone number
 def open_chat(phone_number):
     browser.get(CHAT_URL_TEMPLATE.format(phone=phone_number))
     time.sleep(12)
@@ -48,12 +50,14 @@ def open_chat(phone_number):
     return input_box
 
 
+# Function to send a message in the chat
 def send_message(input_box, message):
     input_box.send_keys(message)
     input_box.send_keys(Keys.ENTER)
     time.sleep(5)
 
 
+# Function to get the last message received in the chat
 def get_last_message():
     last_message_xpath = "//div[contains(@class, 'message-in')]//span[contains(@class, 'selectable-text')]"
     user_messages = browser.find_elements(By.XPATH, last_message_xpath)
@@ -62,6 +66,7 @@ def get_last_message():
     return None, None
 
 
+# Function to handle incoming messages and respond accordingly
 def handle_messages(input_box):
     last_received_message, last_message_id = get_last_message()
     close_chat = False
